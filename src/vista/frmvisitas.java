@@ -4,6 +4,9 @@
  */
 package vista;
 
+import controlador.ctrlvisitas;
+import modelo.visitas;
+
 /**
  *
  * @author Estudiante
@@ -16,6 +19,16 @@ public class frmvisitas extends javax.swing.JFrame {
     public frmvisitas() {
         initComponents();
     }
+    
+    public static void initfrmvisitas() {
+        visitas modelo = new visitas();
+        frmvisitas vista = new  frmvisitas();
+        ctrlvisitas controlador = new ctrlvisitas(modelo, vista);
+        
+        vista.setVisible(true);
+        
+        
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -26,21 +39,223 @@ public class frmvisitas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        txtnombre = new javax.swing.JTextField();
+        txtedad = new javax.swing.JTextField();
+        txtespecialidad = new javax.swing.JTextField();
+        btnagregar = new javax.swing.JButton();
+        btneliminar = new javax.swing.JButton();
+        btneditar = new javax.swing.JButton();
+        btnlimpiar = new javax.swing.JButton();
+        btnbuscar = new javax.swing.JButton();
+        txtbuscar = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jtbpacientes = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
+        edad = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setText("CRUD Enfermeria");
+
+        txtnombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtnombreActionPerformed(evt);
+            }
+        });
+
+        txtedad.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtedad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtedadActionPerformed(evt);
+            }
+        });
+
+        txtespecialidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtespecialidadActionPerformed(evt);
+            }
+        });
+
+        btnagregar.setText("Agregar");
+        btnagregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnagregarActionPerformed(evt);
+            }
+        });
+
+        btneliminar.setText("Eliminar");
+        btneliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btneliminarActionPerformed(evt);
+            }
+        });
+
+        btneditar.setText("editar");
+        btneditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btneditarActionPerformed(evt);
+            }
+        });
+
+        btnlimpiar.setText("limpiar");
+
+        btnbuscar.setText("buscar");
+
+        txtbuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtbuscarActionPerformed(evt);
+            }
+        });
+
+        jtbpacientes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jtbpacientes);
+
+        jLabel2.setText("nombre");
+
+        edad.setText("edad");
+
+        jLabel4.setText("especialidad");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(26, 26, 26))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel4)
+                            .addComponent(edad))
+                        .addGap(31, 31, 31)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(txtnombre, javax.swing.GroupLayout.DEFAULT_SIZE, 599, Short.MAX_VALUE)
+                    .addComponent(txtedad)
+                    .addComponent(txtespecialidad))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(262, 262, 262)
+                .addComponent(btnbuscar)
+                .addGap(50, 50, 50)
+                .addComponent(txtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1099, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 21, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(473, 473, 473)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(185, 185, 185)
+                .addComponent(btnagregar)
+                .addGap(174, 174, 174)
+                .addComponent(btneliminar)
+                .addGap(99, 99, 99)
+                .addComponent(btneditar)
+                .addGap(154, 154, 154)
+                .addComponent(btnlimpiar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel1)
+                .addGap(72, 72, 72)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtedad, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(edad))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtespecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addGap(38, 38, 38)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnagregar)
+                    .addComponent(btneliminar)
+                    .addComponent(btneditar)
+                    .addComponent(btnlimpiar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnbuscar)
+                    .addComponent(txtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(41, 41, 41)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtnombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtnombreActionPerformed
+
+    private void txtespecialidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtespecialidadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtespecialidadActionPerformed
+
+    private void txtedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtedadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtedadActionPerformed
+
+    private void txtbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtbuscarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtbuscarActionPerformed
+
+    private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btneliminarActionPerformed
+
+    private void btnagregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagregarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnagregarActionPerformed
+
+    private void btneditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btneditarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -72,11 +287,29 @@ public class frmvisitas extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmvisitas().setVisible(true);
+              initfrmvisitas();
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnagregar;
+    public javax.swing.JButton btnbuscar;
+    public javax.swing.JButton btneditar;
+    public javax.swing.JButton btneliminar;
+    public javax.swing.JButton btnlimpiar;
+    private javax.swing.JLabel edad;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
+    public javax.swing.JTable jtbpacientes;
+    public javax.swing.JTextField txtbuscar;
+    public javax.swing.JTextField txtedad;
+    public javax.swing.JTextField txtespecialidad;
+    public javax.swing.JTextField txtnombre;
     // End of variables declaration//GEN-END:variables
 }
