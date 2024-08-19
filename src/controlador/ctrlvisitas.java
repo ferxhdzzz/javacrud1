@@ -24,6 +24,7 @@ public class ctrlvisitas implements MouseListener{
     this.vistas = vista;
     
     vista.btnagregar.addMouseListener(this);
+    modelo.Mostrar(vista.jtbpacientes);
     
     
     }
@@ -36,6 +37,7 @@ public class ctrlvisitas implements MouseListener{
             modelo.setEspecialidad(vistas.txtnombre.getText());
             
             modelo.Guardar();
+            modelo.Mostrar(vistas.jtbpacientes);
             
             
         } 
