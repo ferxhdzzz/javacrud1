@@ -4,6 +4,8 @@
  */
 package controlador;
 
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.time.chrono.ThaiBuddhistEra;
@@ -14,7 +16,7 @@ import vista.frmvisitas;
  *
  * @author Estudiante
  */
-public class ctrlvisitas implements MouseListener{
+public class ctrlvisitas implements MouseListener, KeyListener{
     
     private visitas modelo;
     private frmvisitas vistas;
@@ -25,6 +27,13 @@ public class ctrlvisitas implements MouseListener{
     
     vista.btnagregar.addMouseListener(this);
     modelo.Mostrar(vista.jtbpacientes);
+    vista.btneliminar.addMouseListener(this);
+    vista.jtbpacientes.addMouseListener(this);
+    vista.btneditar.addMouseListener(this);
+    vista.btnlimpiar.addMouseListener(this);
+    vista.btnbuscar.addKeyListener(this);
+    vista.txtbuscar.addKeyListener(this);
+    
     
     
     }
@@ -38,14 +47,44 @@ public class ctrlvisitas implements MouseListener{
             
             modelo.Guardar();
             modelo.Mostrar(vistas.jtbpacientes);
+        
             
             
         } 
+        
+        if (e.getSource()==vistas.btneliminar) {
+              modelo.Eliminar(vistas.jtbpacientes);
+            modelo.Mostrar(vistas.jtbpacientes); 
+                                 
+         }     
+          
+        if (e.getSource()==vistas.jtbpacientes){
+        modelo.cargarDatosTabla(vistas);
+      
+        }
+        
+             if (e.getSource()==vistas.btneditar){
+       
+                 modelo.setNombre(vistas.txtnombre.getText());
+                 modelo.setEdad(Integer.parseInt(vistas.txtedad.getText()));
+                 modelo.setEspecialidad(vistas.txtespecialidad.getText());
+                 modelo.Actualizar(vistas.jtbpacientes);
+                 modelo.Mostrar(vistas.jtbpacientes);
+      
+        }
+             
+             if (e.getSource()==vistas.btnlimpiar){
+             modelo.limpiar(vistas);
+        
+             
+             }
+       
         
     }
 
     @Override
     public void mousePressed(MouseEvent e) {
+        
     }
 
     @Override
@@ -58,6 +97,26 @@ public class ctrlvisitas implements MouseListener{
 
     @Override
     public void mouseExited(MouseEvent e) {
+    }
+
+    
+    
+    @Override
+    public void keyTyped(KeyEvent e) {
+
+        if (e.getSource()==vistas.txtbuscar){
+             
+          modelo.Buscar(vistas.jtbpacientes, vistas.txtbuscar);
+       }
+            }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
     }
          
 }

@@ -97,6 +97,8 @@
               <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
               <Component id="btnlimpiar" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
+              <Component id="btnactualizar" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -128,6 +130,7 @@
                   <Component id="btneliminar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btneditar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnlimpiar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnactualizar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="21" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -204,7 +207,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btneditar">
       <Properties>
-        <Property name="text" type="java.lang.String" value="editar"/>
+        <Property name="text" type="java.lang.String" value="Actualizar"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btneditarActionPerformed"/>
@@ -275,6 +278,14 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="especialidad"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnactualizar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Actualizar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnactualizarActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

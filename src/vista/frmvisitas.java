@@ -57,6 +57,7 @@ public class frmvisitas extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         edad = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        btnactualizar = new javax.swing.JButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -110,7 +111,7 @@ public class frmvisitas extends javax.swing.JFrame {
             }
         });
 
-        btneditar.setText("editar");
+        btneditar.setText("Actualizar");
         btneditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btneditarActionPerformed(evt);
@@ -145,6 +146,13 @@ public class frmvisitas extends javax.swing.JFrame {
         edad.setText("edad");
 
         jLabel4.setText("especialidad");
+
+        btnactualizar.setText("Actualizar");
+        btnactualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnactualizarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -190,7 +198,9 @@ public class frmvisitas extends javax.swing.JFrame {
                 .addComponent(btneditar)
                 .addGap(154, 154, 154)
                 .addComponent(btnlimpiar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnactualizar)
+                .addGap(65, 65, 65))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -216,7 +226,8 @@ public class frmvisitas extends javax.swing.JFrame {
                     .addComponent(btnagregar)
                     .addComponent(btneliminar)
                     .addComponent(btneditar)
-                    .addComponent(btnlimpiar))
+                    .addComponent(btnlimpiar)
+                    .addComponent(btnactualizar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnbuscar)
@@ -257,6 +268,10 @@ public class frmvisitas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btneditarActionPerformed
 
+    private void btnactualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnactualizarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnactualizarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -293,6 +308,7 @@ public class frmvisitas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnactualizar;
     public javax.swing.JButton btnagregar;
     public javax.swing.JButton btnbuscar;
     public javax.swing.JButton btneditar;
